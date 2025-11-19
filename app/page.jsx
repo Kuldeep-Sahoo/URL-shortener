@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { api } from "../convex/_generated/api";
 import { useMutation } from "convex/react";
 import { nanoid } from "nanoid";
+import TogleTheme from "./_components/TogleTheme";
 const Page = () => {
   const mut = useMutation(api.urls.createUrl)
 
@@ -37,7 +38,7 @@ const Page = () => {
     setLoading(false)
   }
   return (
-    <div className="flex justify-center items-center mt-[40vh]">
+    <div className="h-screen flex justify-center items-center bg-blue-950 dark:bg-black">
       <div className="flex flex-col justify-center items-center">
 
         <div>
@@ -56,6 +57,9 @@ const Page = () => {
         </div>
         <div className=" mx-4 mt-4">  {newURL}
         </div>
+      </div>
+      <div className="absolute right-3 top-3 ">
+        <TogleTheme />
       </div>
     </div>
   );
