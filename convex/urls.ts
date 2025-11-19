@@ -47,3 +47,10 @@ export const getUrlFromOrgUrl = query({
     return data.url;
   },
 });
+
+export const getAllUrls = query({
+  handler: async (ctx) => {
+    const data = await ctx.db.query("urls").order("desc").collect();
+    return data;
+  },
+});
